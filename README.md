@@ -9,7 +9,8 @@ file editor
 file uploader / downloader  
 cmd  
 sql  
-
+  
+It should be quite easy to add your own modules.  
 #### WARNING ####
 Using any of these scripts on servers you dont own or have permission  
 is ILLEGAL !  
