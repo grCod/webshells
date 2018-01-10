@@ -272,7 +272,7 @@ class FileEditor  {
 		elseif(isset($_POST["remove"])) 
 			$this->message = $this->feRemove($this->path) ? "Deleted.":"Failed.";
 		elseif(isset($_POST["rename"])) 
-			$this->feRename((this_file() == null ? this_path():this_file())); 
+			$this->feRename(((this_file() == null) ? this_path():this_file())); 
 		elseif(isset($_POST["mkdir"])) 
 			$this->feMkdir(); 
 	}
@@ -293,14 +293,14 @@ class FileEditor  {
 		<?php
 	}
 	
-	public function feRead() {
+	private function feRead() {
 		if(($data = @file_get_contents($this->path)) !== false) 
 			$this->text = $this->isHtml($data) ? htmlspecialchars($data):$data; 
 		else 
 			$this->message = "Can't access file.";
 	}
 	
-	public function feWrite($data) {
+	private function feWrite($data) {
 		$this->message = (@file_put_contents($this->path, $data) !== false) ? "Saved.":"Failed.";
 	}
 	
